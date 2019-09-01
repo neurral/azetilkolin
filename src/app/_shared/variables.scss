@@ -1,0 +1,112 @@
+// Layout
+$headerHeight: 71px;
+$headerHeightMobile: 61px;
+$footerHeight: 80px;
+$mobileMinWidth: 250px;
+
+//Custom Breakpoints
+$iphonePlus: 'screen', '<=414px';
+$iphonePlusLandscape: 'screen', 'height<=414px';
+
+// Layout
+@mixin header-offset {
+  padding-top: $headerHeight;
+  @include media('screen', '<=tablet') {
+    padding-top: $headerHeightMobile;
+  }
+}
+
+/** Break to ellipsis. Dont-forget to set as block and fixed width to take effect */
+@mixin truncateToEllipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin wordwrap() {
+  /* For Firefox */
+  white-space: pre-wrap;
+  word-break: break-all;
+
+  /* For Chrome and IE */
+  word-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+}
+
+/* For fixed positioning */
+@mixin sticky() {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+/**
+  * Enforce the aspect ratio into the internal <img> using
+  * https://www.w3schools.com/howto/howto_css_aspect_ratio.asp
+  * Add this mixin to your image wrapper's style.
+
+  @usage How to use:
+    <div class="SOME_DIV_WITH_DEFINED_WIDTH_HEIGHT">
+      <div class="wrap-aspect-ratio">
+        <img />
+      </div>
+    </div
+*/
+@mixin aspect-ratio($width, $height, $objectFit: cover) {
+  position: relative;
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .wrap-aspect-ratio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+
+    img {
+      background-color: #efefef;
+      /* Center and magnet to image width.
+        Dont' specify a height to maintain original aspect ratio of img.*/
+      width: 100%;
+      // height: 100%;
+      object-fit: $objectFit;
+      align-self: center;
+    }
+  }
+}
+
+/** Fade in effect */
+@mixin fade-in($durationSeconds: 1s) {
+  -webkit-animation-duration: $durationSeconds;
+  animation-duration: $durationSeconds;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
