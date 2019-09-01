@@ -1,48 +1,48 @@
-@import "~@angular/material/theming";
-@include mat-core();
+// @import "~@angular/material/theming";
+// @include mat-core();
 
-$my-app-primary: mat-palette($mat-blue-grey);
-$my-app-accent: mat-palette($mat-pink, 500, 900, A100);
-$my-app-warn: mat-palette($mat-deep-orange);
-$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+// $my-app-primary: mat-palette($mat-blue-grey);
+// $my-app-accent: mat-palette($mat-pink, 500, 900, A100);
+// $my-app-warn: mat-palette($mat-deep-orange);
+// $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
 
-$md-mcgpalette0: (
-  50: #e8f0f8,
-  100: #c5daee,
-  200: #9ec2e3,
-  300: #77aad7,
-  400: #5a97cf,
-  500: #7f6000,
-  600: #377dc0,
-  700: #2f72b9,
-  800: #2768b1,
-  900: #53420e,
-  A100: #dae9ff,
-  A200: #a7caff,
-  A400: #74abff,
-  A700: #aa9249,
-  contrast: (
-    50: #000000,
-    100: #000000,
-    200: #000000,
-    300: #000000,
-    400: #000000,
-    500: #ffffff,
-    600: #ffffff,
-    700: #ffffff,
-    800: #ffffff,
-    900: #ffffff,
-    A100: #000000,
-    A200: #000000,
-    A400: #000000,
-    A700: #000000
-  )
-);
+// $md-mcgpalette0: (
+//   50: #e8f0f8,
+//   100: #c5daee,
+//   200: #9ec2e3,
+//   300: #77aad7,
+//   400: #5a97cf,
+//   500: #7f6000,
+//   600: #377dc0,
+//   700: #2f72b9,
+//   800: #2768b1,
+//   900: #53420e,
+//   A100: #dae9ff,
+//   A200: #a7caff,
+//   A400: #74abff,
+//   A700: #aa9249,
+//   contrast: (
+//     50: #000000,
+//     100: #000000,
+//     200: #000000,
+//     300: #000000,
+//     400: #000000,
+//     500: #ffffff,
+//     600: #ffffff,
+//     700: #ffffff,
+//     800: #ffffff,
+//     900: #ffffff,
+//     A100: #000000,
+//     A200: #000000,
+//     A400: #000000,
+//     A700: #000000
+//   )
+// );
 
-@include angular-material-theme($md-mcgpalette0);
-.alternate-theme {
-  $alternate-primary: mat-palette(800);
-  $alternate-accent: mat-palette(A700);
-  $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
-  @include angular-material-theme($alternate-theme);
-}
+// @include angular-material-theme($md-mcgpalette0);
+// .alternate-theme {
+//   $alternate-primary: mat-palette(800);
+//   $alternate-accent: mat-palette(A700);
+//   $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
+//   @include angular-material-theme($alternate-theme);
+// }
